@@ -1,0 +1,101 @@
+.kicker{
+    margin-top: 160px;
+    .use{
+        display: flex;
+        gap: 30px;
+        &__location{
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+        .location{
+            &__image{
+                height: 96px;
+                width: 96px;
+                border-radius: 50%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background: $second-color;
+            }
+            &__info{
+                &--title{
+                    font: {
+                        family: $main-font;
+                        weight: 700;
+                        size: 24px;
+                    }
+                    line-height: 28px;
+                    color: $third-color;
+                }
+                &--text{
+                    max-width: 350px;
+                    width: 100%;
+                    font: {
+                        family: $second-font;
+                        weight:400;
+                        size: 15px;
+                    }
+                    line-height: 25px;
+                    color: $main-color;
+                    margin-top: 27px;
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width:768px) {
+    .kicker{
+        margin-top: 122px;
+        .use{
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            &__location{
+                display: flex;
+                justify-content: center;
+                flex-direction: row;
+                gap: 80px;
+            }
+        }
+    }
+}
+@media screen and (max-width:576px) {
+    .kicker{
+        margin-top: 120px;
+        .use{
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            &__location{
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+                align-items: center;
+                gap: 24px;
+                text-align: center;
+            }
+            .location{
+                &__image{
+                    height: 56px;
+                    width: 56px;
+                    &--img{
+                        width: 24px;
+                    }
+                }
+                &__info{
+                    &--title{
+                        font: {
+                            size: 20px;
+                        }
+                    }
+                    &--text{
+                        max-width: 373px;
+                        width: 100%;
+                        margin-top: 24px;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,190 @@
+@import '../mixins';
+.facility{
+    margin-top: 200px;
+    .types{
+        display: flex;
+        flex-direction: column;
+        gap: 160px;
+    }
+    .easy{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        position: relative;
+        &__info{
+            max-width: 445px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            &--title{
+                font: {
+                    family: $main-font;
+                    weight: 700;
+                    size: 48px;
+                }
+                line-height: 48px;
+                color: $third-color;
+            }
+            &--text{
+                font: {
+                    family: $second-font;
+                    weight:400;
+                    size:15px;
+                }
+                line-height: 25px;
+                color: $main-color;
+                margin-top: 24px;
+                margin-bottom: 40px;
+            }
+            &--btn{
+                @include btn;
+            }
+        }
+        &__image{
+            &::before{
+                content: '';
+                width: 445px;
+                height: 445px;
+                border-radius: 50%;
+                position: absolute;
+                right: -600px;
+                background: #E5ECF4;
+                    }
+            &--img{
+                width: 445px;
+                height: 445px;
+                border-radius: 50%;
+            }
+        }
+    }
+    .city{
+        flex-direction: row-reverse;
+        .easy__image::before{
+                content: '';
+                width: 445px;
+                height: 445px;
+                border-radius: 50%;
+                position: absolute;
+                left: -600px;
+                background: #E5ECF4;
+        }
+    }
+    .easy1__line{
+        position: absolute;
+        right: -210px;
+        z-index: 2;
+        top: 300px;
+    }
+    .city__line{
+        width: 650px;
+        position: absolute;
+        left: -210px;
+        z-index: 2;
+        top: 300px;
+        transform: rotateY(180deg);
+    }
+    .zero__line{
+        width: 650px;
+        position: absolute;
+        right: -210px;
+        z-index: 2;
+        top: 300px;
+    }
+}
+@media screen and (max-width:768px) {
+    .facility{
+        margin-top: 145px;
+        .types{
+            display: flex;
+            gap: 160px;
+        }
+        .easy{
+            flex-direction: column-reverse;
+            justify-content: center;
+            text-align: center;
+            gap: 56px;
+            &__info{
+                max-width: 573px;
+                width: 100%;
+                justify-content: center;
+                align-items: center;
+                &--text{
+                    margin-top: 40px;
+                    margin-bottom: 40px;
+                }
+                &--btn{
+                    @include btn;
+                }
+            }
+            &__image{
+                &::before{
+                    right: -500px;
+                }
+            }
+        }
+        .city{
+            .easy__image::before{
+                left: -500px;
+            }
+        }
+        .city__line{
+            left: -400px;
+            top: 0;
+        }
+        .zero__line{
+            right: -350px;
+            top: 0;
+        }
+    }
+}
+@media screen and (max-width:576px) {
+    .facility{
+        margin-top: 120px;
+        .easy{
+            &__image::before{
+                display: none;
+            }
+            &__info{
+                max-width: 311px;
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                &--title{
+                    max-width: 311px;
+                    width: 100%;
+                    font: {
+                        size: 32px;
+                    }
+                    line-height: 32px;
+                }
+                &--text{
+                    margin-top: 32px;
+                    margin-bottom: 32px;
+                }
+                &--btn{
+                    @include btn;
+                }
+            }
+            &__image{
+                &--img{
+                    width: 311px;
+                    height: 311px;
+                    border-radius: 50%;
+                }
+            }
+        }
+        .city{
+            .easy__image::before{
+                display: none;
+            }
+        }
+        .easy1__line{
+            top: 200px;
+            right: -400px;
+        }
+        .zero__line{
+            right: -500px;
+        }
+    }
+}
